@@ -200,7 +200,7 @@ async function run() {
       });
     });
 
-    app.get("/order-stats", verifyAdmin, verifyJWT, async (req, res) => {
+    app.get("/order-stats", verifyJWT, verifyAdmin, async (req, res) => {
       const pipeline = [
         {
           $lookup: {
